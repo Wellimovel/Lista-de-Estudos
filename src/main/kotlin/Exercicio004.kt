@@ -5,11 +5,11 @@ package org.example
 
 
 fun main(){
-    fun Exercicio004() : Double{
-        val notas = mutableListOf<Double>()
+    fun Exercicio004() : Int{
+        val notas = mutableListOf<Int>()
         for(i in 1..4){
             print("Digite a nota $i: ")
-            val nota = readLine()?.toDoubleOrNull()?:continue
+            val nota = readLine()?.toIntOrNull()?:continue
             notas.add(nota)
         }
         val soma = notas.sum()
