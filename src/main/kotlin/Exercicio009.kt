@@ -6,13 +6,12 @@
 package org.example
 
 fun main() {
-    fun Exercicio009(){
+    fun Exercicio009() {
         println("Passe a temperatura em Farenheit:")
         val farenheit:Double= readln().toDouble()
-        val ceusius: Double=
-
-
-
-
+        val ceusius: Double= 5*(farenheit-32)/9
+        println("$ceusius")
     }
+    val resultado= Exercicio009()
+    println(resultado)
 }
