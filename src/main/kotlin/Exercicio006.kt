@@ -1,3 +1,6 @@
+//#### Exercicio 006
+//
+//Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
 package org.example
 
 import kotlin.math.PI
