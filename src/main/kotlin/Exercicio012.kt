@@ -6,10 +6,11 @@
 package org.example
 
 fun main() {
-    fun Exercicio012() {
-
-
+    fun Exercicio012(altura:Float): Double {
+        return (72.7*altura) - 58
     }
-    val resultado= Exercicio012()
-    println(resultado)
+    println("Digite sua altura em cm:")
+    val altura:Float = readln().toFloat()
+    val exercicio: Double = Exercicio012(altura)
+    println(exercicio)
     }
