@@ -14,19 +14,25 @@
 
 package org.example
 
-import kotlin.collections.mutableListOf as mutableListOf1
+import org.jetbrains.kotlin.serialization.js.ast.JsAstProtoBuf.Return
 
 fun main() {
-    fun Exercicio014(pesoDePeixe: Int, multa:Int): Int {
-        val confere:Int =0
-        if pesoDePeixe
+    fun Exercicio014(pesoDePeixe:Int, multa:Int): Any {
 
+        println("vai ter multa")
+
+        if (pesoDePeixe > 50) {
+            val divisaoPeixes: Int = (pesoDePeixe - 50)
+            val conferencia:Int=  divisaoPeixes.times(multa)
+            return conferencia
+        } else {
+           return println("Não precisa pagar multa hoje!")
+
+        }
     }
-    println("Boa tarde João Papo-de-Pescador, quantos kilos de peixe pegou hoje?")
-    val multa:Int=50
-    val pesoDePeixe:Int = readln().toInt()
-    val valorCalculado:Int = Exercicio014(pesoDePeixe,multa)
-
-
-    println("O valor da sua multa é $valorCalculado")
+        println("Boa tarde João Papo-de-Pescador, quantos kilos de peixe pegou hoje?")
+        val multa: Int = 4
+        val pesoDePeixe: Int = readln().toInt()
+        val valorCalculado:Any = Exercicio014(pesoDePeixe, multa)
+        println("O valor da sua multa é $valorCalculado")
     }
