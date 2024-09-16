@@ -9,12 +9,22 @@
 //Informe ao usuário a quantidades de latas de tinta
 //a serem compradas e o preço total.
 package org.example
+import kotlin.math.ceil
+import kotlin.time.times
 
 fun main() {
-    fun Exercicio016() {
+    fun Exercicio016(area: Int) {
+        val contaLatas:Int = ceil(area / 54.0).toInt()
+        val latasTinta:Int = 80*contaLatas
+        val latasReais: Int =latasTinta
 
-
-       }
+        val conta= println("Você precisa comprar $contaLatas no valor de R$$latasReais")
+        return conta
+    }
+    println("Quantos metros quadrados a ser pintado?")
+    val area: Int = readln().toInt()
+    val latasComprar =Exercicio016(area)
+    println(latasComprar)
 
 
 }
