@@ -21,40 +21,53 @@ import kotlin.math.ceil
 
 
 fun main() {
-    fun Exercicio016(area: Int) {
-        val lataGrandeLitros:Double =18.00
-        val lataGrandePreco:Double =80.00
-        val lataPequenaLitros:Double =3.60
-        val lataPequenaPreco:Double =25.00
-    println("Selecione uma opção:")
-        println("Digite o numero da opção:\n 1 - Latas de 18 litros;\n 2 - Galões de 3,6 litros;\n 3 - Latas e galões")
-        val escolha:Int= readln().toInt()
-        if(escolha == 1){
-            val contaLatas:Int = ceil(area / 54.0).toInt()
-            val latasTinta:Int = 80*contaLatas
-            val latasReais: Int =latasTinta
+    fun Exercicio016() {
 
-            val conta= println("Você precisa comprar $contaLatas no valor de R$$latasReais")
-            return conta
+        // Dados do problema
+        val coberturaPorLitro = 6.0  // metros quadrados por litro
+        val litroPorLata = 18.0
+        val litroPorGalao = 3.6
+        val precoLata = 80.0
+        val precoGalao = 25.0
 
-        }else if(escolha == 2){
-            val contaLatas:Double = ceil((area / 21).toDouble(),6).toDouble()
-            val latasTinta:Double = 80*contaLatas
-            val latasReais: Double =latasTinta
+        // Solicita o tamanho da área a ser pintada
+        print("Informe o tamanho da área em metros quadrados a ser pintada: ")
+        val area = readLine()?.toDoubleOrNull() ?: return
 
-            val conta= println("Você precisa comprar $contaLatas no valor de R$$latasReais")
-            return conta
+        // Calcula a quantidade de tinta necessária com folga de 10%
+        val litrosNecessarios = area / coberturaPorLitro * 1.10
 
-        }else if(escolha == 3){
+        // Situação 1: Usar apenas latas de 18 litros
+        val latasApenas = ceil(litrosNecessarios / litroPorLata)
+        val custoLatasApenas = latasApenas * precoLata
 
-        }else{
-            println("Escolha inválida, reinicie o programa e escolha uma das 3 opções validas (1,2 ou 3)")
-        }
-    }
-    println("Quantos metros quadrados a ser pintado?")
-    val area: Int = readln().toInt()
-    val infoDeCompras =Exercicio016(area)
+        // Situação 2: Usar apenas galões de 3,6 litros
+        val galoesApenas = ceil(litrosNecessarios / litroPorGalao)
+        val custoGaloesApenas = galoesApenas * precoGalao
+
+        // Situação 3: Misturar latas e galões para o menor custo
+        val latasMisturado = litrosNecessarios.toInt() / litroPorLata.toInt()
+        val restanteLitros = litrosNecessarios % litroPorLata
+        val galoesMisturado = ceil(restanteLitros / litroPorGalao)
+        val custoMisturado = (latasMisturado * precoLata) + (galoesMisturado * precoGalao)
+
+        // Exibe os resultados
+        println("Situação 1: Usar apenas latas de 18 litros:")
+        println("Quantidade de latas: $latasApenas")
+        println("Custo total: R$ $custoLatasApenas")
+
+        println("\nSituação 2: Usar apenas galões de 3,6 litros:")
+        println("Quantidade de galões: $galoesApenas")
+        println("Custo total: R$ $custoGaloesApenas")
+
+        println("\nSituação 3: Misturar latas e galões para o menor custo:")
+        println("Quantidade de latas: $latasMisturado")
+        println("Quantidade de galões: $galoesMisturado")
+        println("Custo total: R$ $custoMisturado")
+
+
+}
+    val infoDeCompras =Exercicio016()
     println(infoDeCompras)
-
 
 }
