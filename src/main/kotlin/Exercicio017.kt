@@ -21,7 +21,7 @@ import kotlin.math.ceil
 
 
 fun main() {
-    fun Exercicio016() {
+    fun Exercicio017() {
 
         // Dados do problema
         val coberturaPorLitro = 6.0  // metros quadrados por litro
@@ -67,7 +67,7 @@ fun main() {
 
 
 }
-    val infoDeCompras =Exercicio016()
+    val infoDeCompras =Exercicio017()
     println(infoDeCompras)
 
 }
